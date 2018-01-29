@@ -27,13 +27,13 @@ void dibujarCasa() {
 	glBegin(GL_TRIANGLES);//Inicia la rutina con un modo de dibujo
 
 	//Techo
-	glColor3f(0.2f, 0.0f, 1.0f);
+	glColor3f(0.88f, 0.68f, 0.0f);
 	glVertex3f(0.0f, 0.5f, 0.0f);
 
-	glColor3f(0.2f, 0.0f, 1.0f);
+	glColor3f(0.88f, 0.68f, 0.0f);
 	glVertex3f(0.3f, 0.2f, 0.0f);
 
-	glColor3f(0.2f, 0.0f, 1.0f);
+	glColor3f(0.88f, 0.68f, 0.0f);
 	glVertex3f(-0.3f, 0.2f, 0.0f);
 
 	glEnd();
@@ -41,16 +41,16 @@ void dibujarCasa() {
 	//Pared
 	glBegin(GL_POLYGON);
 
-	glColor3f(0.5f, 0.0f, 1.0f);
+	glColor3f(0.92f, 0.92f, 0.544f);
 	glVertex3f(-0.3f, 0.2f, 0.0f);
 
-	glColor3f(0.5f, 0.0f, 1.0f);
+	glColor3f(0.92f, 0.92f, 0.544f);
 	glVertex3f(0.3f, 0.2f, 0.0f);
 
-	glColor3f(0.5f, 0.0f, 1.0f);
+	glColor3f(0.92f, 0.92f, 0.544f);
 	glVertex3f(0.3f, -0.5f, 0.0f);
 
-	glColor3f(0.5f, 0.0f, 1.0f);
+	glColor3f(0.92f, 0.92f, 0.544f);
 	glVertex3f(-0.3f, -0.5f, 0.0f);
 
 	glEnd();
@@ -106,36 +106,75 @@ void dibujarCasa() {
 	//Ventanas
 	glBegin(GL_POLYGON);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(0.1f, 0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(0.2f, 0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(0.2f, -0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(0.1f, -0.1f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.15f, 0.1f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.15f, -0.1f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.1f, 0.0f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.2f, 0.0f, 0.0f);
 
 	glEnd();
 
 	glBegin(GL_POLYGON);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(-0.1f, 0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(-0.2f, 0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(-0.2f, -0.1f, 0.0f);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.212f, 0.78f, 1.0f);
 	glVertex3f(-0.1f, -0.1f, 0.0f);
 
 	glEnd();
 
+	glBegin(GL_LINE_STRIP);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.15f, 0.1f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.15f, -0.1f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.1f, 0.0f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.2f, 0.0f, 0.0f);
+
+	glEnd();
 }
 
 void dibujar() {
