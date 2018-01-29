@@ -168,39 +168,6 @@ void dibujar() {
 
 	glEnd();
 
-	/*glBegin(GL_LINE_LOOP);//Inicia la rutina con un modo de dibujo
-
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(-1.0f, 0.0f, 0.0f);
-
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(0.0f, 1.0f, 0.0f);
-
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, 0.0f, 0.0f);
-	
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(0.0f, -1.0f, 0.0f);
-
-	glEnd();
-
-	glBegin(GL_POLYGON);//Inicia la rutina con un modo de dibujo
-
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(-0.3f, 0.0f, 0.0f);//*
-
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(0.0f, 0.3f, 0.0f);//*
-
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(0.3f, 0.0f, 0.0f);//*
-
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(0.0f, -0.3f, 0.0f);//*
-
-	glEnd();//Finaliza la rutina
-	*/
-
 	//Nubes
 	glBegin(GL_POLYGON);
 
@@ -248,6 +215,54 @@ void dibujar() {
 	for (float i = 0; i < 360; i++) {
 
 		glVertex3f(0.2 * cos(i) + 0.6, 0.1 * sin(i) + 0.8, 0);
+	}
+
+	glEnd();
+
+	//Arbol
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.5f, 0.5f, 0.0f);
+	glVertex3f(0.8f, 0.3f, 0.0f);
+
+	glColor3f(0.5f, 0.5f, 0.0f);
+	glVertex3f(0.85f, 0.3f, 0.0f);
+
+	glColor3f(0.5f, 0.5f, 0.0f);
+	glVertex3f(0.85f, -0.5f, 0.0f);
+
+	glColor3f(0.5f, 0.5f, 0.0f);
+	glVertex3f(0.8f, -0.5f, 0.0f);
+
+	glEnd();
+
+	//Hojas
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) + 0.72, 0.15 * sin(i) + 0.0, 0);
+	}
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) + 0.82, 0.15 * sin(i) + 0.2, 0);
+	}
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) + 0.92, 0.15 * sin(i) + 0.0, 0);
 	}
 
 	glEnd();
