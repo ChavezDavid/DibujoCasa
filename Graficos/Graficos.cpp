@@ -28,19 +28,16 @@ void dibujarCasa() {
 
 	//Pared y techo
 	glColor3f(0.5f, 0.0f, 1.0f);
-	glVertex3f(-0.3f, 0.3f, 0.0f);
+	glVertex3f(-0.3f, 0.2f, 0.0f);
 
 	glColor3f(0.5f, 0.0f, 1.0f);
-	glVertex3f(-0.0f, 0.6f, 0.0f);
+	glVertex3f(0.3f, 0.2f, 0.0f);
 
 	glColor3f(0.5f, 0.0f, 1.0f);
-	glVertex3f(0.3f, 0.3f, 0.0f);
+	glVertex3f(0.3f, -0.5f, 0.0f);
 
 	glColor3f(0.5f, 0.0f, 1.0f);
-	glVertex3f(0.3f, -0.3f, 0.0f);
-
-	glColor3f(0.5f, 0.0f, 1.0f);
-	glVertex3f(-0.3f, -0.3f, 0.0f);
+	glVertex3f(-0.3f, -0.5f, 0.0f);
 
 	glEnd();
 
@@ -48,33 +45,75 @@ void dibujarCasa() {
 	glBegin(GL_POLYGON);
 
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(-0.1f, 0.0f, 0.0f);
+	glVertex3f(-0.1f, -0.2f, 0.0f);
 
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(0.1f, 0.0f, 0.0f);
+	glVertex3f(0.1f, -0.2f, 0.0f);
 
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(0.1f, -0.3f, 0.0f);
+	glVertex3f(0.1f, -0.5f, 0.0f);
 
 	glColor3f(0.0f, 0.0f, 0.0f);
-	glVertex3f(-0.1f, -0.3f, 0.0f);
+	glVertex3f(-0.1f, -0.5f, 0.0f);
 
 	glEnd();
 
-	//Ventana
-	glBegin(GL_QUADS);
+	glBegin(GL_LINE_STRIP);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(0.1f, 0.0f, 0.0f);
+	glVertex3f(0.0f, -0.2f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.0f, -0.5f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.8f, 0.8f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.01 * cos(i) - 0.014, 0.01 * sin(i) - 0.35, 0);
+	}
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0.8f, 0.8f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.01 * cos(i) + 0.013, 0.01 * sin(i) - 0.35, 0);
+	}
+	glEnd();
+
+	//Ventana
+	glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.1f, 0.1f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(0.2f, 0.1f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
 	glVertex3f(0.2f, 0.0f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(0.2f, -0.1f, 0.0f);
+	glVertex3f(0.1f, 0.0f, 0.0f);
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(0.1f, -0.1f, 0.0f);
+	glVertex3f(-0.1f, 0.0f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.2f, 0.0f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.2f, -0.1f, 0.0f);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex3f(-0.1f, -0.1f, 0.0f);
 
 	glEnd();
 
@@ -119,10 +158,10 @@ void dibujar() {
 	glBegin(GL_POLYGON);
 
 	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(-1.0f, -0.3f, 0.0f);
+	glVertex3f(-1.0f, -0.5f, 0.0f);
 
 	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -0.3f, 0.0f);
+	glVertex3f(1.0f, -0.5f, 0.0f);
 
 	glColor3f(0.0f, 0.5f, 0.0f);
 	glVertex3f(1.0f, -1.0f, 0.0f);
@@ -137,7 +176,7 @@ void dibujar() {
 	glColor3f(0.8f, 0.8f, 0.0f);
 	for (float i = 0; i < 360; i++) {
 		
-		glVertex3f(0.2 * cos(i) + 0.4, 0.2 * sin(i) + 0.6, 0);
+		glVertex3f(0.13 * cos(i) + 0.8, 0.2 * sin(i) + 0.8, 0);
 	}
 	glEnd();
 }
@@ -148,8 +187,8 @@ int main()
 	GLFWwindow *window;
 
 	//Propiedades de la ventana
-	GLfloat ancho = 1024;
-	GLfloat alto = 720;
+	GLfloat ancho = 1920;
+	GLfloat alto = 1080;
 
 	//Inicializacion de GLFW
 	if (!glfwInit()) {
