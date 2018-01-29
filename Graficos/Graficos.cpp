@@ -24,9 +24,23 @@ void actualizar() {
 
 void dibujarCasa() {
 
-	glBegin(GL_POLYGON);//Inicia la rutina con un modo de dibujo
+	glBegin(GL_TRIANGLES);//Inicia la rutina con un modo de dibujo
 
-	//Pared y techo
+	//Techo
+	glColor3f(0.2f, 0.0f, 1.0f);
+	glVertex3f(0.0f, 0.5f, 0.0f);
+
+	glColor3f(0.2f, 0.0f, 1.0f);
+	glVertex3f(0.3f, 0.2f, 0.0f);
+
+	glColor3f(0.2f, 0.0f, 1.0f);
+	glVertex3f(-0.3f, 0.2f, 0.0f);
+
+	glEnd();
+
+	//Pared
+	glBegin(GL_POLYGON);
+
 	glColor3f(0.5f, 0.0f, 1.0f);
 	glVertex3f(-0.3f, 0.2f, 0.0f);
 
@@ -68,23 +82,28 @@ void dibujarCasa() {
 
 	glEnd();
 
+	//Chapas
 	glBegin(GL_POLYGON);
+
 	glColor3f(0.8f, 0.8f, 0.0f);
 	for (float i = 0; i < 360; i++) {
 
 		glVertex3f(0.01 * cos(i) - 0.014, 0.01 * sin(i) - 0.35, 0);
 	}
+
 	glEnd();
 
 	glBegin(GL_POLYGON);
+
 	glColor3f(0.8f, 0.8f, 0.0f);
 	for (float i = 0; i < 360; i++) {
 
 		glVertex3f(0.01 * cos(i) + 0.013, 0.01 * sin(i) - 0.35, 0);
 	}
+
 	glEnd();
 
-	//Ventana
+	//Ventanas
 	glBegin(GL_POLYGON);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
@@ -94,20 +113,20 @@ void dibujarCasa() {
 	glVertex3f(0.2f, 0.1f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(0.2f, 0.0f, 0.0f);
+	glVertex3f(0.2f, -0.1f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(0.1f, 0.0f, 0.0f);
+	glVertex3f(0.1f, -0.1f, 0.0f);
 
 	glEnd();
 
 	glBegin(GL_POLYGON);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(-0.1f, 0.0f, 0.0f);
+	glVertex3f(-0.1f, 0.1f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glVertex3f(-0.2f, 0.0f, 0.0f);
+	glVertex3f(-0.2f, 0.1f, 0.0f);
 
 	glColor3f(1.0f, 1.0f, 1.0f);
 	glVertex3f(-0.2f, -0.1f, 0.0f);
@@ -120,7 +139,35 @@ void dibujarCasa() {
 }
 
 void dibujar() {
-	dibujarCasa();
+
+	//Sol
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.8f, 0.8f, 0.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.13 * cos(i) + 0.8, 0.2 * sin(i) + 0.8, 0);
+	}
+
+	glEnd();
+
+	//Suelo
+	glBegin(GL_POLYGON);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	glVertex3f(-1.0f, -0.5f, 0.0f);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	glVertex3f(1.0f, -0.5f, 0.0f);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	glVertex3f(1.0f, -1.0f, 0.0f);
+
+	glColor3f(0.0f, 0.5f, 0.0f);
+	glVertex3f(-1.0f, -1.0f, 0.0f);
+
+	glEnd();
+
 	/*glBegin(GL_LINE_LOOP);//Inicia la rutina con un modo de dibujo
 
 	glColor3f(1.0f, 0.0f, 0.0f);
@@ -154,31 +201,59 @@ void dibujar() {
 	glEnd();//Finaliza la rutina
 	*/
 
-	//Suelo
+	//Nubes
 	glBegin(GL_POLYGON);
 
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(-1.0f, -0.5f, 0.0f);
-
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -0.5f, 0.0f);
-
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(1.0f, -1.0f, 0.0f);
-
-	glColor3f(0.0f, 0.5f, 0.0f);
-	glVertex3f(-1.0f, -1.0f, 0.0f);
-
-	glEnd();
-
-	//Sol
-	glBegin(GL_POLYGON);
-	glColor3f(0.8f, 0.8f, 0.0f);
+	glColor3f(1.0f, 1.0f, 1.0f);
 	for (float i = 0; i < 360; i++) {
-		
-		glVertex3f(0.13 * cos(i) + 0.8, 0.2 * sin(i) + 0.8, 0);
+
+		glVertex3f(0.35 * cos(i) - 1.0, 0.2 * sin(i) + 0.7, 0);
 	}
+
 	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) - 0.6, 0.1 * sin(i) + 0.8, 0);
+	}
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) - 0.6, 0.1 * sin(i) + 0.4, 0);
+	}
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.15 * cos(i) + 0.8, 0.1 * sin(i) + 0.7, 0);
+	}
+
+	glEnd();
+
+	glBegin(GL_POLYGON);
+
+	glColor3f(1.0f, 1.0f, 1.0f);
+	for (float i = 0; i < 360; i++) {
+
+		glVertex3f(0.2 * cos(i) + 0.6, 0.1 * sin(i) + 0.8, 0);
+	}
+
+	glEnd();
+
+	//Casa
+	dibujarCasa();
 }
 
 int main()
